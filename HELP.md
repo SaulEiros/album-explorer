@@ -1,8 +1,3 @@
-# Read Me First
-The following was discovered as part of building this project:
-
-* The original package name 'com.sauleiros.album-explorer' is invalid and this project uses 'com.sauleiros.album_explorer' instead.
-
 # Getting Started
 
 ### Reference Documentation
