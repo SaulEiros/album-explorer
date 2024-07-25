@@ -1,4 +1,4 @@
-package com.sauleiros.album_explorer
+package com.sauleiros.albumexplorer
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class AlbumExplorerApplication
 
 fun main(args: Array<String>) {
-	runApplication<AlbumExplorerApplication>(*args)
+    runApplication<AlbumExplorerApplication>(*args)
 }
