@@ -49,10 +49,9 @@ class AlbumServiceImplTest {
         Mockito.`when`(albumRepository.findById(1L)).thenReturn(null)
 
         // WHEN & THEN
-        val exception =
-            assertThrows<AlbumNotFoundException> {
-                albumService.findById(1L)
-            }
+        assertThrows<AlbumNotFoundException> {
+            albumService.findById(1L)
+        }
 
         Mockito.verify(albumRepository, Mockito.times(1)).findById(1L)
     }
