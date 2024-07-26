@@ -1,4 +1,4 @@
-package com.sauleiros.albumexplorer.infra.adapters.output.rest.` models`
+package com.sauleiros.albumexplorer.infra.adapters.output.rest.models
 
 import com.sauleiros.albumexplorer.domain.model.Photo
 

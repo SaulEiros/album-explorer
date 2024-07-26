@@ -2,7 +2,7 @@ package com.sauleiros.albumexplorer.infra.adapters.output.rest
 
 import com.sauleiros.albumexplorer.application.ports.output.PhotoRepository
 import com.sauleiros.albumexplorer.domain.model.Photo
-import com.sauleiros.albumexplorer.infra.adapters.output.rest.` models`.JSONPlaceholderPhoto
+import com.sauleiros.albumexplorer.infra.adapters.output.rest.models.JSONPlaceholderPhoto
 import jakarta.annotation.PostConstruct
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Repository
