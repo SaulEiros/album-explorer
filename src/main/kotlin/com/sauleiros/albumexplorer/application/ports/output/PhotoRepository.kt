@@ -7,5 +7,5 @@ interface PhotoRepository {
 
     fun findAll(): List<Photo>
 
-    fun findByAlbumId(albumI: Long): List<Photo>
+    fun findByAlbumId(albumId: Long): List<Photo>
 }
