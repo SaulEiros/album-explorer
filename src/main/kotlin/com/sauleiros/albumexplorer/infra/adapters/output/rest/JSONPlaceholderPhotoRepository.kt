@@ -21,7 +21,13 @@ class JSONPlaceholderPhotoRepository(private val restClientBuilder: RestClient.B
     }
 
     override fun findById(id: Long): Photo? {
-        return restClient.get().uri("/photos/{id}", id).retrieve().body(JSONPlaceholderPhoto::class.java)?.toDomain()
+        return try {
+            restClient.get().uri("/photos/{id}", id)
+                .retrieve()
+                .body(JSONPlaceholderPhoto::class.java)?.toDomain()
+        } catch (ex: Exception) {
+            null
+        }
     }
 
     override fun findAll(): List<Photo> {

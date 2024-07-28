@@ -58,13 +58,13 @@ class PhotoServiceImplTest {
     }
 
     @Test
-    fun `WHEN all photos are requested THEN a photo list is returned `() {
+    fun `GIVEN no albumId WHEN find photos is invoked THEN a photo list is returned `() {
         // GIVEN
         val albums = listOf(photo)
         Mockito.`when`(photoRepository.findAll()).thenReturn(albums)
 
         // WHEN
-        val result = photoService.findAll()
+        val result = photoService.find(null)
 
         // THEN
         assertNotNull(result)
@@ -80,7 +80,7 @@ class PhotoServiceImplTest {
         Mockito.`when`(photoRepository.findByAlbumId(1L)).thenReturn(photos)
 
         // WHEN
-        val result = photoService.findByAlbumId(1L)
+        val result = photoService.find(1L)
 
         // THEN
         assertNotNull(result)
@@ -95,7 +95,7 @@ class PhotoServiceImplTest {
         Mockito.`when`(photoRepository.findByAlbumId(1L)).thenReturn(emptyList())
 
         // WHEN
-        val result = photoService.findByAlbumId(1L)
+        val result = photoService.find(1L)
 
         // THEN
         assertNotNull(result)

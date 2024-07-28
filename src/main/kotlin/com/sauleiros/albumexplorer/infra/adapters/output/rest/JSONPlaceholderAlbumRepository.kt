@@ -26,7 +26,7 @@ class JSONPlaceholderAlbumRepository(private val restClientBuilder: RestClient.B
 
     override fun findAll(): List<Album> {
         return restClient.get().uri(
-            "/photos",
+            "/albums",
         ).retrieve().body(Array<JSONPlaceholderAlbum>::class.java)?.map { it.toDomain() } ?: emptyList()
     }
 }
