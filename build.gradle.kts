@@ -37,4 +37,13 @@ kotlin {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+
+    testLogging {
+        events("started", "passed", "skipped", "failed")
+        showStandardStreams = true
+        exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
+        showExceptions = true
+        showCauses = true
+        showStackTraces = true
+    }
 }
