@@ -12,11 +12,7 @@ class PhotoServiceImpl(private val repository: PhotoRepository) : PhotoService {
         return repository.findById(id) ?: throw PhotoNotFoundException(id)
     }
 
-    override fun findAll(): List<Photo> {
-        return repository.findAll()
-    }
-
-    override fun findByAlbumId(albumId: Long): List<Photo> {
-        return repository.findByAlbumId(albumId)
+    override fun find(albumId: Long?): List<Photo> {
+        return albumId?.let { repository.findByAlbumId(it) } ?: repository.findAll()
     }
 }
