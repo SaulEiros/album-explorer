@@ -78,6 +78,7 @@ These are the different tags available:
 * [photo-service-impl](https://github.com/SaulEiros/album-explorer/tree/photo-service-impl): Added unit tests and Photo Service implementation. Lately a small refactoring has been done in [input-adapters-impl](https://github.com/SaulEiros/album-explorer/tree/input-adapters-impl).
 * [output-adapters-impl](https://github.com/SaulEiros/album-explorer/tree/output-adapters-impl) Added Integration with JSON Placeholder API.
 * [input-adapters-impl](https://github.com/SaulEiros/album-explorer/tree/input-adapters-impl): Added Swagger dependencies and Rest Controllers implementation.
+* [dockerized-app](https://github.com/SaulEiros/album-explorer/tree/dockerized-app): Added Docker and Docker Compose files. Added Live Demo and Enhanced README.md.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
