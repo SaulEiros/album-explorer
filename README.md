@@ -83,7 +83,7 @@ Perhaps in a real scenario, merging the changes by squashing commits would have 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Hexagonal Architecture
+### HEXAGONAL ARCHITECTURE
 
 Hexagonal Architecture, also known as Ports and Adapters Architecture ([read more](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software))), is an architectural pattern that aims to create applications with low coupling between its different components.
 
@@ -110,7 +110,7 @@ main
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Testing
+### TESTING
 
 Unit tests for the application layer were developed using **Junit 5** and **Mockito**. Also, TTD ([see more](https://en.wikipedia.org/wiki/Test-driven_development)) was followed, creating first the test suit and implementing the services later.
 
@@ -138,7 +138,7 @@ fun `GIVEN an albumId without photos WHEN photos by albumId are requested THEN a
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Project Configuration
+### PROJECT CONFIGURATION
 
 There are a few properties configured for the smooth running of the project:
 
@@ -153,13 +153,91 @@ The most relevant is **json-placeholder.url**, which is injected into the servic
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Usage
+## USAGE
 
-For runing and testing the application
+### PREREQUISITES
+
+If you want to run the application, you must make sure that you have the following dependencies installed:
+
+* [Java 21](https://www.java.com)
+* [Gradle](https://docs.gradle.org/current/userguide/installation.html)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+### RUN THE APPLICATION
+
+To run the application it is necessary to type the following commands:
+
+```bash
+gradle build
+```
+
+```bash
+gradle bootRun
+```
+
+If you only want to run the test, run the following command:
+
+```bash
+gradle test
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### USE THE APPLICATION
+
+To use the application you can access the Swagger UI. To do so, you can open a browser and go to this url:
+
+```http request
+http://localhost:8080/swagger-ui/index.html
+```
+
+You can also perform request to the API invoking directly the available endpoints:
+
+#### Get a certain Photo. 
+
+```http request
+http://localhost:8080/photos/{{id}}
+```
+
+{{id}} Should be a Long. It will return a 404 Error if the photo does not exist.
+
+#### Get all Photos
+
+```http request
+http://localhost:8080/photos
+```
+
+You can use the query parameter **albumId** to retrieve all the pictures that belongs to that album.
+
+```http request
+http://localhost:8080/photos?albumId={{id}}
+```
+
+{{id}} Should be a Long. If the album does not exist, It will return an empty list.
+
+#### Get a certain Album
+
+```http request
+http://localhost:8080/albums/{{id}}
+```
+
+{{id}} Should be a Long. It will return a 404 Error if the album does not exist.
+
+#### Get all albums
+
+```http request
+http://localhost:8080/albums
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Contribution
 
+The project has been developed for training purposes, so if you have any suggestions, you are more than welcome to leave a comment by opening an Issue in the repository or contacting me through my Linkedin.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
