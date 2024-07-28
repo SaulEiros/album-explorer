@@ -14,26 +14,36 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#how-to-explore">How To Explore The Repository</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#project-implementation">Project Implementation</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#git-workflow">Git Workflow</a></li>
+        <li><a href="#hexagonal-architecture">Hexagonal Architecture</a></li>
+        <li><a href="#testing">Testing</a></li>
+        <li><a href="#project-configuration">Project Configuration</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li>
+      <a href="#usage">Usage</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#run-the-application">Run The Application</a></li>
+        <li><a href="#use-the-application">Use The Application</a></li>
+        <li><a href="#docker-image">Docker Image</a></li>
+        <li><a href="#live-demo">Live Demo</a></li>
+      </ul>
+    </li>
+    <li><a href="#further-work">Further Work</a></li>
+    <li><a href="#contribution">Contribution</a></li>
   </ol>
 </details>
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## ABOUT THE PROJECT
+<a id="about-the-project"></a>
 
 This project is a technical demonstration of how to build a simple project using Kotlin and Spring Boot. This project also wants to reflect clean code and clean architecture techniques and best practices.
 
@@ -41,7 +51,8 @@ The goal of the app is to display all the albums hosted in JSON Placeholder API 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Built With
+### BUILT WITH
+<a id="built-with"></a>
 The application was created using [Spring Initializr](https://start.spring.io/) based on **Spring Boot 3.3.2** and **java 21**.
 
 These are the tools with which the application has been built:
@@ -55,6 +66,7 @@ These are the tools with which the application has been built:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### How To Explore The Repository
+<a id="how-to-explore"></a>
 
 The repository was tagged each time a significant change was made so that the entire development process could be explored.
 
@@ -69,21 +81,26 @@ These are the different tags available:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Project Implementation
+## PROJECT IMPLEMENTATION
+<a id="project-implementation"></a>
 
 This section explores how different aspects of development were addressed for the reader's clarity.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### GIT WORKFLOW
+<a id="git-flow"></a>
 
 All the developments were done in a **feature branch** and merged to **main** once the branch scope was complete. Once the changes reach main, a new **tag** is created so that they can be easily located.
+
+Also, Conventional Commits specification ([see more](https://www.conventionalcommits.org/en/v1.0.0/)) was followed.
 
 Perhaps in a real scenario, merging the changes by squashing commits would have been appropriate, but in this case I have chosen to merge all commits so that the entire development process could be seen.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### HEXAGONAL ARCHITECTURE
+<a id="hexagonal-architecture"></a>
 
 Hexagonal Architecture, also known as Ports and Adapters Architecture ([read more](https://en.wikipedia.org/wiki/Hexagonal_architecture_(software))), is an architectural pattern that aims to create applications with low coupling between its different components.
 
@@ -111,6 +128,7 @@ main
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### TESTING
+<a id="testing"></a>
 
 Unit tests for the application layer were developed using **Junit 5** and **Mockito**. Also, TTD ([see more](https://en.wikipedia.org/wiki/Test-driven_development)) was followed, creating first the test suit and implementing the services later.
 
@@ -139,6 +157,7 @@ fun `GIVEN an albumId without photos WHEN photos by albumId are requested THEN a
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### PROJECT CONFIGURATION
+<a id="project-configuration"></a>
 
 There are a few properties configured for the smooth running of the project:
 
@@ -154,8 +173,10 @@ The most relevant is **json-placeholder.url**, which is injected into the servic
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## USAGE
+<a id="usage"></a>
 
 ### PREREQUISITES
+<a id="prerequisites"></a>
 
 If you want to run the application, you must make sure that you have the following dependencies installed:
 
@@ -166,6 +187,7 @@ If you want to run the application, you must make sure that you have the followi
 
 
 ### RUN THE APPLICATION
+<a id="run-the-application"></a>
 
 To run the application it is necessary to type the following commands:
 
@@ -186,6 +208,7 @@ gradle test
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### USE THE APPLICATION
+<a id="use-the-application"></a>
 
 To use the application you can access the Swagger UI. To do so, you can open a browser and go to this url:
 
@@ -233,7 +256,66 @@ http://localhost:8080/albums
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### DOCKER IMAGE
+<a id="docker-image"></a>
+
+To facilitate the deployment of the application, if you have Docker on your system you can run the application with the following command:
+```bash
+docker-compose up -d
+```
+
+Once the container is up and running, you can access it as normal:
+
+On the swagger front end:
+
+```http request
+http://localhost:8080/swagger-ui/index.html
+```
+
+By querying the api directly, as in this example:
+
+```http request
+http://localhost:8080/photos
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### LIVE DEMO
+<a id="live-demo"></a>
+
+A live demo is also available without downloading the code. You can consult the swagger panel at the following link:
+
+```http request
+http://album-explorer.sauleiros.com/swagger-ui/index.html
+```
+
+Or make requests directly to the api as in this example:
+
+```http request
+https://album-explorer.sauleiros.com/photos
+```
+
+**Note that although the swagger panel is accessible via https, requests will not return content. Enabling SSL connections in Swagger is a work in progress.**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## FURTHER WORK
+<a id="further-work"></a>
+
+#### Activate SSL on Swagger Connections: 
+
+There is currently a problem accessing the Swagger panel in the Live Demo. If accessed via https, it will not be possible to test operations.
+
+#### Integrating a CI/CD flow in github:
+
+It would be great to be able to integrate the changes automatically into the Demo server. For this, a CI/CD plan could be created using the pipelines offered by github.
+
+#### Improving exception handling at the REST layer:
+
+Currently, the exception handling done at the REST layer is limited and could be improved by providing for a larger volume of exceptions.
+
 ## Contribution
+<a id="contribution"></a>
 
 The project has been developed for training purposes, so if you have any suggestions, you are more than welcome to leave a comment by opening an Issue in the repository or contacting me through my Linkedin.
 
