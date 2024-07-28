@@ -3,7 +3,8 @@ WORKDIR /app
 COPY . .
 
 FROM base as build
-RUN gradle build --no-daemon --console=verbose
+RUN chmod +x ./gradlew
+RUN ./gradlew build --no-daemon --console=verbose
 
 
 FROM openjdk:21-jdk as production

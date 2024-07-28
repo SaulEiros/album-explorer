@@ -47,3 +47,8 @@ tasks.withType<Test> {
         showStackTraces = true
     }
 }
+
+// Avoid the creation of album-explorer-<version>-plain.jar
+tasks.getByName<Jar>("jar") {
+    enabled = false
+}
