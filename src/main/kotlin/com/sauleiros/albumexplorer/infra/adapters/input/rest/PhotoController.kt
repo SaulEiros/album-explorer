@@ -24,7 +24,7 @@ class PhotoController(private val photoService: PhotoService) {
         value = [
             ApiResponse(
                 responseCode = "200",
-                description = "Found the Photo",
+                description = "The requested Photo",
                 content = [
                     Content(mediaType = "application/json", schema = Schema(implementation = RestPhoto::class)),
                 ],
@@ -58,7 +58,7 @@ class PhotoController(private val photoService: PhotoService) {
         ],
     )
     @GetMapping
-    fun getByAlbumId(
+    fun findPhotos(
         @Parameter(description = "Id of the Album which the Photos belongs") @RequestParam albumId: Long?,
     ): List<RestPhoto> {
         val result = photoService.find(albumId)
