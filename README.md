@@ -3,6 +3,7 @@
 <!-- PROJECT SHIELDS -->
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
+[![Live Demo][livedemo-shiel]][livedemo-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
@@ -328,6 +329,8 @@ The project has been developed for training purposes, so if you have any suggest
 [issues-url]: https://github.com/github_username/repo_name/issues
 [license-shield]: https://img.shields.io/github/license/sauleiros/album-explorer.svg?style=for-the-badge
 [license-url]: https://github.com/SaulEiros/album-explorer/blob/input-adapters-impl/LICENSE
+[livedemo-shiel]: https://img.shields.io/badge/Live_Demo-000000?style=for-the-badge&color=red
+[livedemo-url]: http://album-explorer.sauleiros.com/swagger-ui/index.html
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/saul-eiros/
 
