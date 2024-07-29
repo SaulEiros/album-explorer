@@ -80,6 +80,7 @@ These are the different tags available:
 * [output-adapters-impl](https://github.com/SaulEiros/album-explorer/tree/output-adapters-impl) Added Integration with JSON Placeholder API.
 * [input-adapters-impl](https://github.com/SaulEiros/album-explorer/tree/input-adapters-impl): Added Swagger dependencies and Rest Controllers implementation.
 * [dockerized-app](https://github.com/SaulEiros/album-explorer/tree/dockerized-app): Added Docker and Docker Compose files. Added Live Demo and Enhanced README.md.
+* [docker-image-publish](https://github.com/SaulEiros/album-explorer/tree/docker-image-publish): Added github actions workflow for build and publish imagen in Dockerhub registry.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -214,7 +215,7 @@ gradle test
 
 To use the application you can access the Swagger UI. To do so, you can open a browser and go to this url:
 
-```http request
+```
 http://localhost:8080/swagger-ui/index.html
 ```
 
@@ -222,7 +223,7 @@ You can also perform request to the API invoking directly the available endpoint
 
 #### Get a certain Photo. 
 
-```http request
+```
 http://localhost:8080/photos/{{id}}
 ```
 
@@ -230,13 +231,13 @@ http://localhost:8080/photos/{{id}}
 
 #### Get all Photos
 
-```http request
+```
 http://localhost:8080/photos
 ```
 
 You can use the query parameter **albumId** to retrieve all the pictures that belongs to that album.
 
-```http request
+```
 http://localhost:8080/photos?albumId={{id}}
 ```
 
@@ -244,7 +245,7 @@ http://localhost:8080/photos?albumId={{id}}
 
 #### Get a certain Album
 
-```http request
+```
 http://localhost:8080/albums/{{id}}
 ```
 
@@ -252,7 +253,7 @@ http://localhost:8080/albums/{{id}}
 
 #### Get all albums
 
-```http request
+```
 http://localhost:8080/albums
 ```
 
@@ -270,16 +271,36 @@ Once the container is up and running, you can access it as normal:
 
 On the swagger front end:
 
-```http request
+```
 http://localhost:8080/swagger-ui/index.html
 ```
 
 By querying the api directly, as in this example:
 
-```http request
+```
 http://localhost:8080/photos
 ```
 
+Aditionaly, a Github Actions Workflow was created for build and publish the image every time a new change is pushed into main ([see workflow](https://github.com/SaulEiros/album-explorer/blob/main/.github/workflows/docker-publish.yml)).
+
+You do not need to download the project for executing it in your local. In order to use the published image, just create a `docker-compose.yml` file like this:
+
+```yaml
+services:
+  backend:
+    container_name: album-explorer-backend
+    image: mreiros/album-explorer-backend:latest
+    volumes:
+      - ./src:/app/src
+    ports:
+      - 8080:8080
+```
+
+Once you have the file created, just run the following command:
+
+```bash
+docker-compose up -d
+```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### LIVE DEMO
@@ -287,17 +308,17 @@ http://localhost:8080/photos
 
 A live demo is also available without downloading the code. You can consult the swagger panel at the following link:
 
-```http request
+```
 http://album-explorer.sauleiros.com/swagger-ui/index.html
 ```
 
 Or make requests directly to the api as in this example:
 
-```http request
-https://album-explorer.sauleiros.com/photos
+```
+http://album-explorer.sauleiros.com/photos
 ```
 
-**Note that although the swagger panel is accessible via https, requests will not return content. Enabling SSL connections in Swagger is a work in progress.**
+**Note that HTTPS requests are not available. Enabling SSL connections in Swagger is a work in progress.**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
