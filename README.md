@@ -81,6 +81,7 @@ These are the different tags available:
 * [input-adapters-impl](https://github.com/SaulEiros/album-explorer/tree/input-adapters-impl): Added Swagger dependencies and Rest Controllers implementation.
 * [dockerized-app](https://github.com/SaulEiros/album-explorer/tree/dockerized-app): Added Docker and Docker Compose files. Added Live Demo and Enhanced README.md.
 * [docker-image-publish](https://github.com/SaulEiros/album-explorer/tree/docker-image-publish): Added github actions workflow for build and publish imagen in Dockerhub registry.
+* [enhanced-album-details](https://github.com/SaulEiros/album-explorer/tree/enhanced-album-details): Added Photos to Album Models to retrieve the photo list along with the Album Details.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
