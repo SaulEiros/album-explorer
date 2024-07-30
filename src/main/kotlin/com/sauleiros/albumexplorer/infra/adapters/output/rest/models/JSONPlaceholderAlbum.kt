@@ -6,11 +6,13 @@ data class JSONPlaceholderAlbum(
     val id: Long,
     val userId: Long,
     val title: String,
+    var photos: List<JSONPlaceholderPhoto> = emptyList(),
 ) {
     fun toDomain(): Album =
         Album(
             id = id,
             userId = userId,
             title = title,
+            photos = photos.map { it.toDomain() },
         )
 }

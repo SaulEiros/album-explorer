@@ -3,6 +3,7 @@ package com.sauleiros.albumexplorer.application.service
 import com.sauleiros.albumexplorer.application.ports.output.AlbumRepository
 import com.sauleiros.albumexplorer.domain.exception.AlbumNotFoundException
 import com.sauleiros.albumexplorer.domain.model.Album
+import com.sauleiros.albumexplorer.domain.model.Photo
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
@@ -26,7 +27,8 @@ class AlbumServiceImplTest {
 
     @BeforeEach
     fun setUp() {
-        album = Album(id = 1L, userId = 1L, title = "Test Album")
+        val photos = listOf(Photo(id = 1L, albumId = 1L, title = "Test Photo", url = "Test Url", thumbnailUrl = "Test Thumbnail"))
+        album = Album(id = 1L, userId = 1L, title = "Test Album", photos = photos)
     }
 
     @Test
