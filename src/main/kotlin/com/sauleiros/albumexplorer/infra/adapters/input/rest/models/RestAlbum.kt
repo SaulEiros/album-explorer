@@ -22,6 +22,11 @@ data class RestAlbum(
         type = "String",
     )
     val title: String,
+    @field:Schema(
+        description = "The Photos of the Album",
+        type = "RestPhoto",
+    )
+    val photos: List<RestPhoto>,
 ) {
     companion object {
         fun fromDomain(album: Album): RestAlbum =
@@ -29,6 +34,7 @@ data class RestAlbum(
                 id = album.id,
                 userId = album.userId,
                 title = album.title,
+                photos = album.photos.map { RestPhoto.fromDomain(it) },
             )
     }
 }
