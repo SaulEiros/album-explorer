@@ -297,7 +297,14 @@ services:
       - 8080:8080
 ```
 
-Once you have the file created, just run the following command:
+Once you have the file created, just run the following commands:
+
+First You need to retrieve the image (also if You have it already and want to update to a new release):
+
+```bash
+docker pull mreiros/album-explorer-backend:latest
+```
+Then, You can start the application running the following command:
 
 ```bash
 docker-compose up -d
